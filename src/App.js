@@ -25,7 +25,7 @@ class App extends React.Component {
     handleClick = (event) => {
         console.log('todolist', this.state.todoList);
         const list = this.state.todoList;
-        list.push({title: 'todo Title', description: 'lalala'});
+        list.push({title: 'todo Title', description: 'lalalalend'});
         // this.setState({showDescription: !this.state.showDescription})
 
         this.setState({todoList: list})

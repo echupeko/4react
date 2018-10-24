@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header';
 import Button from './components/Button';
 import TodoItem from './components/TodoItem';
+
 
 
 class App extends React.Component {
@@ -54,12 +56,12 @@ class App extends React.Component {
                 <Button handleButtonClick={this.handleClick} description={showDescription ? 'Well done' : ''}/>
                 {todoList.map((element, index) =>
                     <TodoItem
-                        index={index}
+                        /*index={index}
                         titleChangeHandle={this.titleChangeHandle}
                         changeDescriptionHandle={this.changeDescriptionHandle}
-                        deleteTodo={this.deleteTodo}
+                        deleteTodo={this.deleteTodo}*/
                         title={element.title}
-                        description={element.description}
+                        disabled={element.disabled}
                         key={index}/>)}
             </div>
         );

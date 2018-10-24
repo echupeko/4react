@@ -6,7 +6,9 @@ const styles = {
         margin: '0 auto',
         height: '50px',
         width: '70%',
-        backgroundColor: 'green'
+        backgroundColor: 'green',
+        textAlign: 'left',
+        fontSize: '20px'
     }
 };
 

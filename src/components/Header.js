@@ -1,22 +1,17 @@
 import React from 'react';
+import '../style/Header.css';
 
-const styles = {
-    container:{
-        display: 'block',
-        margin: '0 auto',
-        height: '50px',
-        width: '70%',
-        backgroundColor: 'green',
-        textAlign: 'left',
-        fontSize: '20px'
-    }
-};
 
 class Header extends React.Component{
     render() {
-
         return (
-            <div style={styles.container}>ToDo List</div>
+            <div className="Header">
+                <div className="Title">
+                    Мои задачи
+                </div>
+                <input></input>
+                <button><span>+ Добавить задачу</span></button>
+            </div>
         )
     }
 }

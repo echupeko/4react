@@ -7,7 +7,7 @@ class Header extends React.Component{
         return (
             <div className="Header">
                 <div className="Title">
-                    Мои задачи
+                    <b>Мои задачи</b>
                 </div>
                 <input></input>
                 <button><span>+ Добавить задачу</span></button>

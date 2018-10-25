@@ -16,15 +16,14 @@ class Header extends React.Component{
     };
 
     render() {
-        const {handleButtonClick, valueInput} =this.props;
 
         return (
             <div className="Header">
                 <div className="Title">
                     <b>Мои задачи</b>
                 </div>
-                <input onChange={this.valueChange} value={valueInput}></input>
-                <button onClick={handleButtonClick}><span>+ Добавить задачу</span></button>
+                <input onChange={this.valueChange} value={this.props.valueInput}></input>
+                <button onClick={this.props.handleButtonClick}><span>+ Добавить задачу</span></button>
             </div>
         )
     }

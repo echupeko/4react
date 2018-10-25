@@ -18,7 +18,7 @@ class Header extends React.Component{
                 <div className="Title">
                     <b>Мои задачи</b>
                 </div>
-                <input onChange={this.valueChange} value={this.props.valueInput}></input>
+                <input onChange={this.valueChange} value={'fs'}></input>
                 <button onClick={this.props.handleButtonClick}><span>+ Добавить задачу</span></button>
             </div>
         )

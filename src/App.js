@@ -36,21 +36,21 @@ class App extends React.Component {
     };
 
     render() {
-        const {descriptionInput, todoList} = this.state;
+        const {todoList} = this.state;
         return (
             <div className="App">
                 <Header
                     handleButtonClick={this.handleButton}
-                    valueInput={this.state.descriptionInput}
+                    //valueInput={this.state.descriptionInput}
                     changeDescriptionHandle={this.changeDescriptionHandle}
                     />
                 <Body/>
                 {todoList.map((element,index) =>
                     <TodoItem
                         titleChangeHandle={this.titleChangeHandle}
-                        setName={descriptionInput}
+                        setName={element.setName}
                         deleteItem={this.deleteItems(index)}
-                        setUser={descriptionInput}
+                        setUser={element.setUser}
                         index={index}
                         key={index}/>)}
             </div>

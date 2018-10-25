@@ -13,7 +13,11 @@ class App extends React.Component {
 
     handleButton = () =>{
         this.setState({descriptionInput: this.changeDescriptionHandle});
-        console.log('description = ', this.state.descriptionInput)
+        console.log('description = ', this.state.descriptionInput);
+        const list = this.state.todoList;
+        list.push({setName: 'todo Title', setUser: 'lalala'});
+
+        this.setState({todoList: list})
     };
 
     changeDescriptionHandle = (event) => {
@@ -27,7 +31,7 @@ class App extends React.Component {
     titleChangeHandle = (index) => (event) => {
         console.log('eevent2', event);
         const list = this.state.todoList;
-        list[index].title = event.target.value;
+        list[index].setName = event.target.value;
         this.setState({todoList: list})
     };
 

@@ -1,15 +1,14 @@
 import React from 'react';
-import Form from './Form';
-import '../style/Body.css';
-
 
 class Header extends React.Component{
 
+    state={
+        visible: true
+    }
+
     render() {
         return (
-            <div className="Body">
-                <Form/>
-            </div>
+            <form></form>
         )
     }
 }

@@ -9,19 +9,14 @@ class TodoItem extends React.Component {
         user: 'Ответственный'
     }
 
-
-
     render() {
         return (
-            <div>
-                <div onChange={this.props.titleChangeHandle}>{this.props.setName}</div>
+            <div onChange={this.props.titleChangeHandle}>
+                <div >{this.props.setName}</div>
                 <div>{this.state.dateCreate}</div>
                 <div>{this.props.setUser}</div>
-                <button onClick={this.props.deleteItem(this.props.index)}>Delete</button>
             </div>
-
         )
-
     }
 }
 

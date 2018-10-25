@@ -10,14 +10,13 @@ class TodoItem extends React.Component {
 
     render() {
         return (
-            <div onChange={this.props.titleChangeHandle}>
-                <div >{this.props.setName}</div>
-                <div>{this.state.dateCreate}</div>
-                <div>{this.props.setUser}</div>
+            <div style={{display: 'flex'}} onChange={this.props.titleChangeHandle}>
+                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.setName}</div>
+                <div style={{display: 'flex', flexDirection: 'column'}}>{this.state.dateCreate}</div>
+                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.setUser}</div>
             </div>
         )
     }
 }
-
 
 export default TodoItem;

@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Body from './components/Body';
-import TodoItem from "./components/TodoItem";
 
 class App extends React.Component {
 
@@ -36,7 +35,6 @@ class App extends React.Component {
     };
 
     render() {
-        const {todoList} = this.state;
         return (
             <div className="App">
                 <Header
@@ -44,15 +42,8 @@ class App extends React.Component {
                     //valueInput={this.state.descriptionInput}
                     changeDescriptionHandle={this.changeDescriptionHandle}
                     />
-                <Body/>
-                {todoList.map((element,index) =>
-                    <TodoItem
-                        titleChangeHandle={this.titleChangeHandle}
-                        setName={element.setName}
-                        deleteItem={this.deleteItems(index)}
-                        setUser={element.setUser}
-                        index={index}
-                        key={index}/>)}
+                <Body todoArray={this.state.todoList}/>
+
             </div>
         );
     }

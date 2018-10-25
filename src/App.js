@@ -15,15 +15,16 @@ class App extends React.Component {
 
     changeDescriptionHandle = (event) => {
 
-        const list = this.state.todoList;
-        list[event.index].description = event.value;
-        this.setState({todoList: list})
+        const descr = this.state.descriptionInput;
+        descr.description = event.value;
+        this.setState({descriptionInput: descr})
+
     };
 
     render() {
         return (
             <div className="App">
-                <Header handleButtonClick={this.handleButton} valueInput={this.state.descriptionInput}/>
+                <Header handleButtonClick={this.handleButton} valueInput={this.state.descriptionInput} changeDescriptionHandle={this.changeDescriptionHandle}/>
                 <Body/>
             </div>
         );

@@ -11,8 +11,8 @@ class Header extends React.Component{
 
     valueChange = (event) => {
         const value = event.target.value;
-        
-        this.props.changeDescriptionHandle({value, index: this.props.index})
+
+        this.props.changeDescriptionHandle({value})
     };
 
     render() {

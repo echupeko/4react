@@ -15,13 +15,17 @@ class App extends React.Component {
         list.push({setName: this.state.descriptionInput, setUser: this.state.descriptionInput + 'lalala'});
         this.setState({todoList: list});
         console.log('todo added: ', this.state.todoList[list.length-1].setName);
-        let todoArray = this.state.todoList;
-        return(todoArray)
+
     };
 
     changeDescriptionHandle = (event) => {
         this.setState({descriptionInput: event.value})
     };
+
+    getArray = () => {
+        var todoArray = this.state.todoList;
+        return(todoArray)
+    }
 
     deleteItems = (index) =>{
         console.log('delete: ', index)
@@ -42,7 +46,7 @@ class App extends React.Component {
                     valueInput={this.state.descriptionInput}
                     changeDescriptionHandle={this.changeDescriptionHandle}
                     />
-                <Body todoArray={this.handleButton}/>
+                <Body todo={this.state.todoList}/>
 
             </div>
         );

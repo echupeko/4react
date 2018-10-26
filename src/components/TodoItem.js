@@ -16,6 +16,7 @@ class TodoItem extends React.Component {
                 <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.setUser}</div>
             </div>
         )
+
     }
 }
 

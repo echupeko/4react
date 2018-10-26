@@ -3,15 +3,11 @@ import Form from './Form';
 import '../style/Body.css';
 import TodoItem from "./TodoItem";
 
-class Header extends React.Component{
+class Body extends React.Component{
 
     state = {
-        todoList: []
+        todoList: this.props.todo
     };
-
-    getArray = () => {
-        this.setState({todoList: this.props.todoArray});
-    }
 
     deleteItems = (index) =>{
         console.log('delete: ', index)
@@ -41,6 +37,7 @@ class Header extends React.Component{
             </div>
         )
     }
+
 }
 
-export default Header
+export default Body

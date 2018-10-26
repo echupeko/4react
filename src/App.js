@@ -11,12 +11,12 @@ class App extends React.Component {
     };
 
     handleButton = () =>{
-        this.setState({descriptionInput: this.changeDescriptionHandle});
-        console.log('description = ', this.state.descriptionInput);
         const list = this.state.todoList;
-        list.push({setName: 'todo Title', setUser: 'lalala'});
-
-        this.setState({todoList: list})
+        list.push({setName: this.state.descriptionInput, setUser: this.state.descriptionInput + 'lalala'});
+        this.setState({todoList: list});
+        console.log('todo added: ', this.state.todoList[list.length-1].setName);
+        let todoArray = this.state.todoList;
+        return(todoArray)
     };
 
     changeDescriptionHandle = (event) => {
@@ -39,10 +39,10 @@ class App extends React.Component {
             <div className="App">
                 <Header
                     handleButtonClick={this.handleButton}
-                    //valueInput={this.state.descriptionInput}
+                    valueInput={this.state.descriptionInput}
                     changeDescriptionHandle={this.changeDescriptionHandle}
                     />
-                <Body todoArray={this.state.todoList}/>
+                <Body todoArray={this.handleButton}/>
 
             </div>
         );

@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Form from './components/Form';
 import Header from './components/Header';
 import Body from './components/Body';
 
@@ -7,7 +8,8 @@ class App extends React.Component {
 
     state = {
         descriptionInput: 'Input your task',
-        todoList: []
+        todoList: [],
+        visibleForm: 'hidden'
     };
 
     handleButton = () =>{
@@ -15,7 +17,7 @@ class App extends React.Component {
         list.push({setName: this.state.descriptionInput, setUser: this.state.descriptionInput + 'lalala'});
         this.setState({todoList: list});
         console.log('todo added: ', this.state.todoList[list.length-1].setName);
-
+        //this.setState({visibleForm: /*(this.visibleForm === 'visible')? 'hidden' :*/ 'hidden'});
     };
 
     changeDescriptionHandle = (event) => {
@@ -39,14 +41,16 @@ class App extends React.Component {
     };
 
     render() {
+
         return (
             <div className="App">
+                <Form Visite={this.visibleForm}/>
                 <Header
                     handleButtonClick={this.handleButton}
                     valueInput={this.state.descriptionInput}
                     changeDescriptionHandle={this.changeDescriptionHandle}
                     />
-                <Body todo={this.state.todoList}/>
+                <Body todo={this.state.todoList} visibles={this.visibleForm}/>
 
             </div>
         );

@@ -17,7 +17,7 @@
 .Title > b{
     font-size: 3vw;
 }
-
+/*
 input{
     display: flex;
     margin: 33px 0px 33px 150px;
@@ -40,7 +40,7 @@ button{
     width: 250px;
     height: 34px;
 }
-
+*/
 button > span{
     text-align: center;
     /*font-size: 25px;*/

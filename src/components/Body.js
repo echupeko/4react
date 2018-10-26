@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+
 import '../style/Body.css';
 import TodoItem from "./TodoItem";
 
@@ -24,7 +24,7 @@ class Body extends React.Component{
         const {todoList} = this.state;
         return (
             <div className="Body">
-                <Form/>
+
                 {todoList.map((element,index) =>
                     <TodoItem
                         titleChangeHandle={this.titleChangeHandle}

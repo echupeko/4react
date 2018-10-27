@@ -7,7 +7,7 @@ import Body from './components/Body';
 class App extends React.Component {
 
     state = {
-        descriptionInput: 'Input your task',
+        descriptionInput: 'Введите название задачи',
         todoList: [],
         visibleForm: 'hidden',
         nameTasks: 'name task',
@@ -15,16 +15,16 @@ class App extends React.Component {
         descriptionTasks: 'description'
     };
 
-    handleButton = () =>{
+    handleButton = () => {
 
-        this.setState({visibleForm: (this.state.visibleForm === 'visible')? 'hidden' : 'visible'});
+        this.setState({visibleForm: (this.state.visibleForm === 'visible') ? 'hidden' : 'visible'});
     };
 
     addTask = () => {
         const list = this.state.todoList;
-       list.push({setName: this.state.nameTasks, setUser: this.state.responsibles});
-       this.setState({todoList: list});
-       console.log('todo added: ', this.state.todoList[list.length-1].setName);
+        list.push({setName: this.state.nameTasks, setUser: this.state.responsibles});
+        this.setState({todoList: list});
+        console.log('todo added: ', this.state.todoList[list.length - 1].setName);
         this.setState({visibleForm: 'hidden'});
     }
 
@@ -46,10 +46,10 @@ class App extends React.Component {
 
     getArray = () => {
         var todoArray = this.state.todoList;
-        return(todoArray)
+        return (todoArray)
     }
 
-    deleteItems = (index) =>{
+    deleteItems = (index) => {
         console.log('delete: ', index)
     }
 
@@ -77,7 +77,7 @@ class App extends React.Component {
                     handleButtonClick={this.handleButton}
                     valueInput={this.state.descriptionInput}
                     changeFilter={this.changeFilterHandle}/>
-                <Body todo={this.state.todoList} />
+                <Body todo={this.state.todoList}/>
 
             </div>
         );

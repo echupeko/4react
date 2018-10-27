@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/Form.css';
 
-class Header extends React.Component{
+class Header extends React.Component {
 
     state = {
         visibleFormes: 'hidden'
@@ -24,22 +24,18 @@ class Header extends React.Component{
 
     render() {
         return (
-            <div className="mainForm" style={{visibility: this.props.getVisible, border: 'solid 1px #4b4b4b', position: 'absolute'}}>
+            <div className="mainForm"
+                 style={{visibility: this.props.getVisible, border: 'solid 1px #4b4b4b', position: 'absolute'}}>
                 <p>Введите название</p>
                 <input onChange={this.nameChange} value={this.props.nameTask}></input>
                 <p>Введите ответственного</p>
                 <input onChange={this.responsibleChange} value={this.props.responsible}></input>
                 <p>Введите описание</p>
                 <input onChange={this.descriptionChange} value={this.props.descriptionTask}></input>
-                <button onClick={this.props.addButtonClick}>Добавить в список</button>
+                <button className="add" onClick={this.props.addButtonClick}><span>Добавить в список</span></button>
             </div>
         )
     }
 }
-/*
-* <input onChange={this.nameChange()} value={this.props.nameTask}></input>
-                <p>Введите ответственного</p>
-                <input onChange={this.responsibleChange} value={this.props.responsible}></input>
-                <p>Введите описание</p>
-                <input onChange={this.descriptionChange} value={this.props.descriptionTask}></input>*/
+
 export default Header

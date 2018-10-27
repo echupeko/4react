@@ -3,13 +3,13 @@ import React from 'react';
 import '../style/Body.css';
 import TodoItem from "./TodoItem";
 
-class Body extends React.Component{
+class Body extends React.Component {
 
     state = {
         todoList: this.props.todo
     };
 
-    deleteItems = (index) =>{
+    deleteItems = (index) => {
         console.log('delete: ', index)
     }
 
@@ -24,8 +24,12 @@ class Body extends React.Component{
         const {todoList} = this.state;
         return (
             <div className="Body">
-
-                {todoList.map((element,index) =>
+                <div style={{display: 'flex'}}>
+                    <div className="name" style={{display: 'flex', flexDirection: 'column'}}>Название</div>
+                    <div className="datecreate" style={{display: 'flex', flexDirection: 'column'}}>Дата создания</div>
+                    <div className="user" style={{display: 'flex', flexDirection: 'column'}}>Ответственный</div>
+                </div>
+                {todoList.map((element, index) =>
                     <TodoItem
                         titleChangeHandle={this.titleChangeHandle}
                         setName={element.setName}

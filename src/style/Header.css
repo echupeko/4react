@@ -1,14 +1,15 @@
 .Header {
     display: flex;
     margin: 0 auto;
-    height: 100px;
+    height: 150px;
     width: 70%;
  }
 
 .Title{
     margin: 20px 0px 20px 10px;
     flex-direction: column;
-
+    display: flex;
+    display: flex;
     color: #4b4b4b;
     width: 100%;
     text-align: left;
@@ -16,34 +17,42 @@
 
 .Title > b {
     font-size: 3vw;
+    margin-top: 10px;
 }
 
 .searchInput {
     display: flex;
-    margin: 33px 0px 33px 150px;
+    margin-top: 50px;
     flex-direction: column;
     width: 100%;
-    height: 30px;
+    height: 2.55vw;
     border: solid 1px #4b4b4b;
     border-radius: 5px;
+    font-size: 1vw;
 }
 
 .addTask {
     border-radius: 5px;
     border: solid 0px;
-
-
     background-color: #3eb5f1;
-    margin: 33px 0px 33px 20px;
+    margin-top: 50px;
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 34px;
+    width: 15vw;
+    height: 2.7vw;
 }
 
 .addTask > span {
     text-align: center;
-    /*font-size: 25px;*/
+    font-size: 1vw;
     color: white;
-    width: 240px;
+    width: 10vw;
+    margin-top: 13px;
+}
+
+.controlFrame {
+    width: 120vw;
+    display: flex;
+    margin: 0 auto;
 }

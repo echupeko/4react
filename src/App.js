@@ -9,19 +9,39 @@ class App extends React.Component {
     state = {
         descriptionInput: 'Input your task',
         todoList: [],
-        visibleForm: 'hidden'
+        visibleForm: 'hidden',
+        nameTasks: 'name task',
+        responsibles: 'responsible',
+        descriptionTasks: 'description'
     };
 
     handleButton = () =>{
+
+        this.setState({visibleForm: (this.state.visibleForm === 'visible')? 'hidden' : 'visible'});
+    };
+
+    addTask = () => {
         const list = this.state.todoList;
-        list.push({setName: this.state.descriptionInput, setUser: this.state.descriptionInput + 'lalala'});
-        this.setState({todoList: list});
-        console.log('todo added: ', this.state.todoList[list.length-1].setName);
-        //this.setState({visibleForm: /*(this.visibleForm === 'visible')? 'hidden' :*/ 'hidden'});
+       list.push({setName: this.state.nameTasks, setUser: this.state.responsibles});
+       this.setState({todoList: list});
+       console.log('todo added: ', this.state.todoList[list.length-1].setName);
+        this.setState({visibleForm: 'hidden'});
+    }
+
+    changeFilterHandle = (event) => {
+        this.setState({descriptionInput: event.value})
+    };
+
+    changeNameTaskHandle = (event) => {
+        this.setState({nameTasks: event.value})
+    };
+
+    changeResposibleHandle = (event) => {
+        this.setState({responsibles: event.value})
     };
 
     changeDescriptionHandle = (event) => {
-        this.setState({descriptionInput: event.value})
+        this.setState({descriptionTasks: event.value})
     };
 
     getArray = () => {
@@ -44,17 +64,28 @@ class App extends React.Component {
 
         return (
             <div className="App">
-                <Form Visite={this.visibleForm}/>
+                <Form
+                    getVisible={this.state.visibleForm}
+                    nameTask={this.state.nameTasks}
+                    responsible={this.state.responsibles}
+                    descriptionTask={this.state.descriptionTasks}
+                    changeNameTask={this.changeNameTaskHandle}
+                    changeResponsible={this.changeResposibleHandle}
+                    changeDesription={this.changeDescriptionHandle}
+                    addButtonClick={this.addTask}/>
                 <Header
                     handleButtonClick={this.handleButton}
                     valueInput={this.state.descriptionInput}
-                    changeDescriptionHandle={this.changeDescriptionHandle}
-                    />
-                <Body todo={this.state.todoList} visibles={this.visibleForm}/>
+                    changeFilter={this.changeFilterHandle}/>
+                <Body todo={this.state.todoList} />
 
             </div>
         );
     }
 }
 
+
+/*
+
+                    c*/
 export default App;

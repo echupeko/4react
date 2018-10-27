@@ -14,11 +14,11 @@
     text-align: left;
 }
 
-.Title > b{
+.Title > b {
     font-size: 3vw;
 }
-/*
-input{
+
+.searchInput {
     display: flex;
     margin: 33px 0px 33px 150px;
     flex-direction: column;
@@ -28,7 +28,7 @@ input{
     border-radius: 5px;
 }
 
-button{
+.addTask {
     border-radius: 5px;
     border: solid 0px;
 
@@ -40,8 +40,8 @@ button{
     width: 250px;
     height: 34px;
 }
-*/
-button > span{
+
+.addTask > span {
     text-align: center;
     /*font-size: 25px;*/
     color: white;

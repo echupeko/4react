@@ -1,0 +1,24 @@
+.mainForm {
+    background-color: #4b4b4b;
+    width: 80%;
+    height: 500vh;
+    margin-left: 10%;
+    margin-top: 5%;
+    border-radius: 20px;
+    border: solid 3px #4b4b4b;
+    color: white;
+}
+
+input {
+    display: flex;
+    margin-left: 20px;
+    width: 80%;
+    height: 30px;
+    border: solid 1px #4b4b4b;
+    border-radius: 5px;
+}
+
+p {
+    text-align: left;
+    margin-left: 20px;
+}

@@ -24,9 +24,11 @@ class Body extends React.Component {
         const {todoList} = this.state;
         return (
             <div className="Body">
+
                 <div style={{display: 'flex'}}>
                     <div className="name" style={{display: 'flex', flexDirection: 'column'}}>Название</div>
-                    <div className="datecreate" style={{display: 'flex', flexDirection: 'column'}}>Дата создания</div>
+                    <div className="datecreate" style={{display: 'flex', flexDirection: 'column'}}>Дата создания
+                    </div>
                     <div className="user" style={{display: 'flex', flexDirection: 'column'}}>Ответственный</div>
                 </div>
                 {todoList.map((element, index) =>

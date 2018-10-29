@@ -2,20 +2,16 @@ import React from 'react';
 
 class TodoItem extends React.Component {
 
-    state = {
-        name: 'Название',
-        dateCreate: new Date().toLocaleTimeString(),
-        user: 'Ответственный'
-    }
 
     render() {
         return (
             <div style={{display: 'flex'}} onChange={this.props.titleChangeHandle}>
-                <input style={{width: '10px', height: '10px'}} type="checkbox"></input>
-                <div className="name" style={{display: 'flex', flexDirection: 'column'}}>{this.props.setName}</div>
-                <div className="datecreate"
-                     style={{display: 'flex', flexDirection: 'column'}}>{this.state.dateCreate}</div>
-                <div className="user" style={{display: 'flex', flexDirection: 'column'}}>{this.props.setUser}</div>
+                <input style={{width: '10px', height: '10px'}} type="checkbox" value={this.props.checkTaskProps}></input>
+                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.titleTaskProps}</div>
+                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.descriptionTasksProps}</div>
+                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.importanceTaskProps}</div>
+                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.dateDeadlineProps}</div>
+                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.dateCompletedProps}</div>
             </div>
         )
 

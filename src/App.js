@@ -12,7 +12,13 @@ class App extends React.Component {
         visibleForm: 'hidden',
         nameTasks: 'name task',
         responsibles: 'responsible',
-        descriptionTasks: 'description'
+        descriptionTasks: 'description',
+        checkTask: '',
+        titleTask: '',
+        desriptionTask: '',
+        importanceTask: '',
+        dateDeadline: new Date(),
+        dateCompleted: new Date()
     };
 
     handleButton = () => {

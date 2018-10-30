@@ -38,8 +38,8 @@ class Body extends React.Component {
                         titleTaskProps={element.titleTask}
                         descriptionTaskProps={element.descriptionTask}
                         importanceTaskProps={element.importanceTask}
-                        dateDeadline={element.dateDeadline}
-                        dateCompleted={element.dateCompleted}
+                        dateDeadline={new Date(element.dateDeadline)}
+                        dateCompleted={new Date(element.dateCompleted)}
                         index={index}
                         key={index}/>)}
 

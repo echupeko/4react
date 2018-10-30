@@ -15,8 +15,8 @@ class App extends React.Component {
         titleTask: '',
         descriptionTask: '',
         importanceTask: '',
-        dateDeadline: new Date(),
-        dateCompleted: new Date()
+        dateDeadline: new Date().toLocaleDateString(),
+        dateCompleted: new Date().toLocaleDateString()
     };
 
     handleButton = () => {

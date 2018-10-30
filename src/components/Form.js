@@ -36,7 +36,7 @@ class Form extends React.Component {
                 <p>Выберите крайний срок выполнения</p>
                 <input type='date'></input>
                 <p>Дата выполнения</p>
-                <input type='date' value></input>
+                <input type='date'></input>
                 <button className="add" onClick={this.props.addButtonClick}><span>Добавить в список</span></button>
                 <button><span>Удалить задачу</span></button>
                 <button><span>Выполнена</span></button>

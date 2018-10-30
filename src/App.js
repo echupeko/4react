@@ -7,15 +7,13 @@ import Body from './components/Body';
 class App extends React.Component {
 
     state = {
+        importance: ['Все', 'Обычная', 'Важная', 'Очень важная'],
         descriptionInput: 'Введите название задачи',
         todoList: [],
         visibleForm: 'hidden',
-        nameTasks: 'name task',
-        responsibles: 'responsible',
-        descriptionTasks: 'description',
         checkTask: '',
         titleTask: '',
-        desriptionTask: '',
+        descriptionTask: '',
         importanceTask: '',
         dateDeadline: new Date(),
         dateCompleted: new Date()
@@ -28,9 +26,15 @@ class App extends React.Component {
 
     addTask = () => {
         const list = this.state.todoList;
-        list.push({setName: this.state.nameTasks, setUser: this.state.responsibles});
+        list.push({
+            titleTask: this.state.titleTask,
+            descriptionTask: this.state.descriptionTask,
+            importanceTask: this.state.importanceTask,
+            dateDeadline: this.state.dateDeadline,
+            dateCompleted: this.state.dateCompleted
+        });
         this.setState({todoList: list});
-        console.log('todo added: ', this.state.todoList[list.length - 1].setName);
+        //console.log('todo added: ', this.state.todoList[list.length - 1].setName);
         this.setState({visibleForm: 'hidden'});
     }
 
@@ -38,16 +42,13 @@ class App extends React.Component {
         this.setState({descriptionInput: event.value})
     };
 
-    changeNameTaskHandle = (event) => {
-        this.setState({nameTasks: event.value})
+    changeTitleTaskHandle = (event) => {
+        this.setState({titleTask: event.value})
     };
 
-    changeResposibleHandle = (event) => {
-        this.setState({responsibles: event.value})
-    };
 
-    changeDescriptionHandle = (event) => {
-        this.setState({descriptionTasks: event.value})
+    changeDescriptionTaskHandle = (event) => {
+        this.setState({descriptionTask: event.value})
     };
 
     getArray = () => {
@@ -59,25 +60,21 @@ class App extends React.Component {
         console.log('delete: ', index)
     }
 
-    titleChangeHandle = (index) => (event) => {
-        console.log('eevent2', event);
-        const list = this.state.todoList;
-        list[index].setName = event.target.value;
-        this.setState({todoList: list})
-    };
 
     render() {
 
         return (
             <div className="App">
                 <Form
+                    importanceList={this.state.importance}
                     getVisible={this.state.visibleForm}
-                    nameTask={this.state.nameTasks}
-                    responsible={this.state.responsibles}
-                    descriptionTask={this.state.descriptionTasks}
-                    changeNameTask={this.changeNameTaskHandle}
-                    changeResponsible={this.changeResposibleHandle}
-                    changeDesription={this.changeDescriptionHandle}
+                    titleTask={this.state.titleTask}
+                    descriptionTask={this.state.descriptionTask}
+                    importanceTask={this.state.importanceTask}
+                    dateDeadline={this.state.dateDeadline}
+                    dateCompleted={this.state.dateCompleted}
+                    changeTitleTask={this.changeTitleTaskHandle}
+                    changeDescriptionTask={this.changeDescriptionTaskHandle}
                     addButtonClick={this.addTask}/>
                 <Header
                     handleButtonClick={this.handleButton}

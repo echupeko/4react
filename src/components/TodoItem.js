@@ -10,8 +10,8 @@ class TodoItem extends React.Component {
                 <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.titleTaskProps}</div>
                 <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.descriptionTasksProps}</div>
                 <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.importanceTaskProps}</div>
-                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.dateDeadlineProps}</div>
-                <div style={{display: 'flex', flexDirection: 'column'}}>{this.props.dateCompletedProps}</div>
+                <div style={{display: 'flex', flexDirection: 'column'}}></div>
+                <div style={{display: 'flex', flexDirection: 'column'}}></div>
             </div>
         )
 

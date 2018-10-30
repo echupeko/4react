@@ -6,7 +6,7 @@ import TodoItem from "./TodoItem";
 class Body extends React.Component {
 
     state = {
-        importance: ['Все','Обычная','Важная','Очень важная'],
+
         todoList: this.props.todo
     };
 
@@ -34,12 +34,10 @@ class Body extends React.Component {
                 </div>
                 {todoList.map((element, index) =>
                     <TodoItem
-                        checkTaskProps={element.checkTaskProps}
-                        titleTaskProps={element.titleTaskProps}
-                        descriptionTasksProps={element.descriptionTasksProps}
-                        importanceTaskProps={element.importanceTaskProps}
-                        dateDeadlineProps={element.dateDeadlineProps}
-                        dateCompletedProps={element.dateCompletedProps}
+                        checkTaskProps={element.checkTask}
+                        titleTaskProps={element.titleTask}
+                        descriptionTaskProps={element.descriptionTask}
+                        importanceTaskProps={element.importanceTask}
                         index={index}
                         key={index}/>)}
 

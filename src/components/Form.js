@@ -33,13 +33,13 @@ class Form extends React.Component {
                         <option value={element} key={index}>{element}</option>
                     )}
                 </select>
-                <p>Выберите крайник срок выполнения</p>
+                <p>Выберите крайний срок выполнения</p>
                 <input type='date'></input>
                 <p>Дата выполнения</p>
-                <input type='date' ></input>
+                <input type='date' value></input>
                 <button className="add" onClick={this.props.addButtonClick}><span>Добавить в список</span></button>
-                <button ><span>Удалить задачу</span></button>
-                <button ><span>Выполнена</span></button>
+                <button><span>Удалить задачу</span></button>
+                <button><span>Выполнена</span></button>
             </div>
         )
     }

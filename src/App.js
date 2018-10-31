@@ -34,7 +34,6 @@ class App extends React.Component {
             dateCompleted: this.state.dateCompleted
         });
         this.setState({todoList: list});
-        //console.log('todo added: ', this.state.todoList[list.length - 1].setName);
         this.setState({visibleForm: 'hidden'});
     }
 
@@ -42,8 +41,8 @@ class App extends React.Component {
         this.setState({descriptionInput: event.value})
     };
 
-    changeTitleTaskHandle = (event) => {
-        this.setState({titleTask: event.value})
+    changeTitleTaskHandle = (event, {datass}) => {
+        this.setState({datass: event.value})
     };
 
     changeImoprtanceTaskHandle = (event) => {
@@ -55,7 +54,7 @@ class App extends React.Component {
     };
 
     changeDateTaskHandle = (event) => {
-        this.setState({descriptionTask: event.value})
+        this.setState({dateDeadline: event.value})
     };
 
     getArray = () => {
@@ -81,7 +80,7 @@ class App extends React.Component {
                     dateDeadline={this.state.dateDeadline}
                     dateCompleted={this.state.dateCompleted}
                     changeImoprtanceTask={this.changeImoprtanceTaskHandle}
-                    changeTitleTask={this.changeTitleTaskHandle}
+                    changeTitleTask={this.changeTitleTaskHandle()}
                     changeDescriptionTask={this.changeDescriptionTaskHandle}
                     changeDateTask={this.changeDateTaskHandle}
                     addButtonClick={this.addTask}/>

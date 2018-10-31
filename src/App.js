@@ -15,8 +15,8 @@ class App extends React.Component {
         titleTask: '',
         descriptionTask: '',
         importanceTask: '',
-        dateDeadline: new Date().toLocaleDateString(),
-        dateCompleted: new Date().toLocaleDateString()
+        dateDeadline: new Date(),
+        dateCompleted: new Date()
     };
 
     handleButton = () => {
@@ -46,8 +46,15 @@ class App extends React.Component {
         this.setState({titleTask: event.value})
     };
 
+    changeImoprtanceTaskHandle = (event) => {
+        this.setState({importanceTask: event.value})
+    };
 
     changeDescriptionTaskHandle = (event) => {
+        this.setState({descriptionTask: event.value})
+    };
+
+    changeDateTaskHandle = (event) => {
         this.setState({descriptionTask: event.value})
     };
 
@@ -73,8 +80,10 @@ class App extends React.Component {
                     importanceTask={this.state.importanceTask}
                     dateDeadline={this.state.dateDeadline}
                     dateCompleted={this.state.dateCompleted}
+                    changeImoprtanceTask={this.changeImoprtanceTaskHandle}
                     changeTitleTask={this.changeTitleTaskHandle}
                     changeDescriptionTask={this.changeDescriptionTaskHandle}
+                    changeDateTask={this.changeDateTaskHandle}
                     addButtonClick={this.addTask}/>
                 <Header
                     handleButtonClick={this.handleButton}

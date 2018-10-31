@@ -4,12 +4,31 @@
     width: 70%;
     background-color: white;
     border: solid 1px #4b4b4b;
-    font-size: 24px;
+    font-size: 20px;
     text-align: left;
 }
 
+
+
 .Body > div {
-    margin: 20px;
     padding: 15px;
     border-bottom: 1px solid #a2a2a2;
+}
+
+.check{
+    width: 5%;
+}
+
+.title{
+    width: 20%;
+}
+
+.description{
+    width: 35%;
+}
+.importance{
+    width: 15%;
+}
+.date{
+    width: 20%;
 }

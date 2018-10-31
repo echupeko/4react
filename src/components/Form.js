@@ -18,6 +18,16 @@ class Form extends React.Component {
         this.props.changeDescriptionTask({value});
     };
 
+    imoprtanceChange = (event) => {
+        const value = event.target.value;
+        this.props.changeImoprtanceTask({value});
+    }
+
+    dateChange = (event) => {
+        const value = event.target.value;
+        this.props.changeDateTask({value});
+    }
+
     render() {
         const {importance} = this.state;
         return (
@@ -28,15 +38,15 @@ class Form extends React.Component {
                 <p>Введите описание</p>
                 <input onChange={this.descriptionChange} value={this.props.descriptionTask}></input>
                 <p>Выберите важность</p>
-                <select>
+                <select  onChange={this.imoprtanceChange}>
                     {importance.map((element, index) =>
                         <option value={element} key={index}>{element}</option>
                     )}
                 </select>
                 <p>Выберите крайний срок выполнения</p>
-                <input type='date'></input>
+                <input onChange={this.dateChange} type='date'></input>
                 <p>Дата выполнения</p>
-                <input type='date'></input>
+                <input onChange={this.dateChange} type='date'></input>
                 <button className="add" onClick={this.props.addButtonClick}><span>Добавить в список</span></button>
                 <button><span>Удалить задачу</span></button>
                 <button><span>Выполнена</span></button>

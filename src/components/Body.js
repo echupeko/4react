@@ -27,10 +27,13 @@ class Body extends React.Component {
             <div className="Body">
 
                 <div style={{display: 'flex'}}>
-                    <div className="name" style={{display: 'flex', flexDirection: 'column'}}>Название</div>
-                    <div className="datecreate" style={{display: 'flex', flexDirection: 'column'}}>Дата создания
+                    <div className="check"></div>
+                    <div className="title" style={{display: 'flex', flexDirection: 'column'}}>Название</div>
+                    <div className="description" style={{display: 'flex', flexDirection: 'column'}}>Описание
                     </div>
-                    <div className="user" style={{display: 'flex', flexDirection: 'column'}}>Ответственный</div>
+                    <div className="importance" style={{display: 'flex', flexDirection: 'column'}}>Важность</div>
+                    <div className="date" style={{display: 'flex', flexDirection: 'column'}}>Срок сдачи</div>
+                    <div className="date" style={{display: 'flex', flexDirection: 'column'}}>Дата выполнения</div>
                 </div>
                 {todoList.map((element, index) =>
                     <TodoItem
@@ -38,8 +41,8 @@ class Body extends React.Component {
                         titleTaskProps={element.titleTask}
                         descriptionTaskProps={element.descriptionTask}
                         importanceTaskProps={element.importanceTask}
-                        dateDeadline={new Date(element.dateDeadline)}
-                        dateCompleted={new Date(element.dateCompleted)}
+                        dateDeadline={element.dateDeadline}
+                        dateCompleted={element.dateCompleted}
                         index={index}
                         key={index}/>)}
 

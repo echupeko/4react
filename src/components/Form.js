@@ -4,50 +4,42 @@ import '../style/Form.css';
 class Form extends React.Component {
 
     state = {
-        visibleFormes: 'hidden',
-        importance: this.props.importanceList
+        importance: this.props.importance,
+        titleTask: '',
+        descriptionTask: '',
+        dateDeadline: new Date(),
+        dateCompleted: new Date()
     };
 
-    titleChange = (event) => {
-        const value = event.target.value;
-        this.props.changeTitleTask({value});
-    };
-
-    descriptionChange = (event) => {
-        const value = event.target.value;
-        this.props.changeDescriptionTask({value});
-    };
-
-    imoprtanceChange = (event) => {
-        const value = event.target.value;
-        this.props.changeImoprtanceTask({value});
+    change = (event, states) => {
+        this.setState({states: event.target.value});
     }
 
-    dateChange = (event) => {
-        const value = event.target.value;
-        this.props.changeDateTask({value});
-    }
 
     render() {
-        const {importance} = this.state;
+        const {importance}=this.state;
         return (
-            <div className="mainForm"
-                 style={{visibility: this.props.getVisible, border: 'solid 1px #4b4b4b', position: 'absolute'}}>
+            <div className="main-form"
+                 style={{visibility: this.props.visibleForm ,border: 'solid 1px #4b4b4b', position: 'absolute'}} >
                 <p>Введите название</p>
-                <input onChange={this.titleChange} value={this.props.titleTask}></input>
+                <input onChange={(event)=>this.change(event, this.state.titleTask)} value={this.state.titleTask}></input>
                 <p>Введите описание</p>
-                <input onChange={this.descriptionChange} value={this.props.descriptionTask}></input>
+                <input value={this.state.descriptionTask}></input>
                 <p>Выберите важность</p>
-                <select  onChange={this.imoprtanceChange}>
+                <select>
                     {importance.map((element, index) =>
-                        <option value={element} key={index}>{element}</option>
+                        <option
+                            value={element}
+                            key={index}>
+                            {element}
+                        </option>
                     )}
                 </select>
                 <p>Выберите крайний срок выполнения</p>
-                <input onChange={this.dateChange} type='date'></input>
+                <input type='date' value={this.state.dateDeadline}></input>
                 <p>Дата выполнения</p>
-                <input onChange={this.dateChange} type='date'></input>
-                <button className="add" onClick={this.props.addButtonClick}><span>Добавить в список</span></button>
+                <input type='date' value={this.state.dateCompleted}></input>
+                <button onClick={this.props.addTask}><span>Добавить в список</span></button>
                 <button><span>Удалить задачу</span></button>
                 <button><span>Выполнена</span></button>
             </div>

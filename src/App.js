@@ -8,62 +8,31 @@ class App extends React.Component {
 
     state = {
         importance: ['Все', 'Обычная', 'Важная', 'Очень важная'],
-        descriptionInput: 'Введите название задачи',
-        todoList: [],
         visibleForm: 'hidden',
-        checkTask: '',
         titleTask: '',
         descriptionTask: '',
         importanceTask: '',
         dateDeadline: new Date(),
-        dateCompleted: new Date()
-    };
-
-    handleButton = () => {
-
-        this.setState({visibleForm: (this.state.visibleForm === 'visible') ? 'hidden' : 'visible'});
+        dateCompleted: new Date(),
+        todoList: []
     };
 
     addTask = () => {
         const list = this.state.todoList;
         list.push({
+
             titleTask: this.state.titleTask,
             descriptionTask: this.state.descriptionTask,
             importanceTask: this.state.importanceTask,
-            dateDeadline: this.state.dateDeadline,
-            dateCompleted: this.state.dateCompleted
+            dateDeadline: this.state.dateDeadline.toLocaleDateString('ru-RU'),
+            dateCompleted: this.state.dateCompleted.toLocaleDateString('ru-RU')
         });
         this.setState({todoList: list});
         this.setState({visibleForm: 'hidden'});
     }
 
-    changeFilterHandle = (event) => {
-        this.setState({descriptionInput: event.value})
-    };
-
-    changeTitleTaskHandle = (event, {datass}) => {
-        this.setState({datass: event.value})
-    };
-
-    changeImoprtanceTaskHandle = (event) => {
-        this.setState({importanceTask: event.value})
-    };
-
-    changeDescriptionTaskHandle = (event) => {
-        this.setState({descriptionTask: event.value})
-    };
-
-    changeDateTaskHandle = (event) => {
-        this.setState({dateDeadline: event.value})
-    };
-
-    getArray = () => {
-        var todoArray = this.state.todoList;
-        return (todoArray)
-    }
-
-    deleteItems = (index) => {
-        console.log('delete: ', index)
+    addClick = () => {
+        this.setState({visibleForm: (this.state.visibleForm==='hidden')? 'visible' : 'hidden'})
     }
 
 
@@ -72,31 +41,20 @@ class App extends React.Component {
         return (
             <div className="App">
                 <Form
-                    importanceList={this.state.importance}
-                    getVisible={this.state.visibleForm}
-                    titleTask={this.state.titleTask}
-                    descriptionTask={this.state.descriptionTask}
-                    importanceTask={this.state.importanceTask}
-                    dateDeadline={this.state.dateDeadline}
-                    dateCompleted={this.state.dateCompleted}
-                    changeImoprtanceTask={this.changeImoprtanceTaskHandle}
-                    changeTitleTask={this.changeTitleTaskHandle()}
-                    changeDescriptionTask={this.changeDescriptionTaskHandle}
-                    changeDateTask={this.changeDateTaskHandle}
-                    addButtonClick={this.addTask}/>
+                    importance = {this.state.importance}
+                    visibleForm={this.state.visibleForm}
+                    addTask={this.addTask}
+                    />
                 <Header
-                    handleButtonClick={this.handleButton}
-                    valueInput={this.state.descriptionInput}
-                    changeFilter={this.changeFilterHandle}/>
-                <Body todo={this.state.todoList}/>
+                    addClick={this.addClick}
+                   />
+                <Body
+                    todoList={this.state.todoList}
+                    />
 
             </div>
         );
     }
 }
 
-
-/*
-
-                    c*/
 export default App;

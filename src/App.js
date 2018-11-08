@@ -17,24 +17,24 @@ class App extends React.Component {
         todoList: []
     };
 
-    addTask = () => {
-        const list = this.state.todoList;
-        list.push({
-
-            titleTask: this.state.titleTask,
-            descriptionTask: this.state.descriptionTask,
-            importanceTask: this.state.importanceTask,
-            dateDeadline: this.state.dateDeadline.toLocaleDateString('ru-RU'),
-            dateCompleted: this.state.dateCompleted.toLocaleDateString('ru-RU')
-        });
-        this.setState({todoList: list});
+    addTask = (value) => {
+        this.setState({todoList: value})
+        // const list = this.state.todoList;
+        // list.push({
+        //
+        //     titleTask: this.state.titleTask,
+        //     descriptionTask: this.state.descriptionTask,
+        //     importanceTask: this.state.importanceTask,
+        //     dateDeadline: this.state.dateDeadline.toLocaleDateString('ru-RU'),
+        //     dateCompleted: this.state.dateCompleted.toLocaleDateString('ru-RU')
+        // });
+        // this.setState({todoList: list});
         this.setState({visibleForm: 'hidden'});
     }
 
     addClick = () => {
         this.setState({visibleForm: (this.state.visibleForm==='hidden')? 'visible' : 'hidden'})
     }
-
 
     render() {
 

@@ -17,18 +17,9 @@ class App extends React.Component {
         todoList: []
     };
 
-    addTask = (value) => {
-        this.setState({todoList: value})
-        // const list = this.state.todoList;
-        // list.push({
-        //
-        //     titleTask: this.state.titleTask,
-        //     descriptionTask: this.state.descriptionTask,
-        //     importanceTask: this.state.importanceTask,
-        //     dateDeadline: this.state.dateDeadline.toLocaleDateString('ru-RU'),
-        //     dateCompleted: this.state.dateCompleted.toLocaleDateString('ru-RU')
-        // });
-        // this.setState({todoList: list});
+    addTask = (value) => (event) => {
+        this.setState({todoList: value});
+        console.log(event.target.value);
         this.setState({visibleForm: 'hidden'});
     }
 

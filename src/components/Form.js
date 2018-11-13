@@ -13,8 +13,7 @@ class Form extends React.Component {
         todoItem: []
     };
 
-    render() {
-        const {importance} = this.state;
+    pushItem = () => {
         const list = this.state.todoItem;
         list.push({
             titleTask: this.state.titleTask,
@@ -24,7 +23,13 @@ class Form extends React.Component {
             dateCompleted: this.state.dateCompleted.toLocaleDateString('ru-RU')
         });
         this.setState({todoItem: list});
+        this.props.addTask(this.state.todoItem);
+    }
+
+    render() {
+
         return (
+
             <div className="main-form"
                  style={{visibility: this.props.visibleForm, border: 'solid 1px #4b4b4b', position: 'absolute'}}>
                 <p>Введите название</p>
@@ -35,7 +40,7 @@ class Form extends React.Component {
                        value={this.state.descriptionTask}></input>
                 <p>Выберите важность</p>
                 <select>
-                    {importance.map((element, index) =>
+                    {this.state.importance.map((element, index) =>
                         <option
                             value={this.state.importanceTask}
                             key={index}>
@@ -49,7 +54,7 @@ class Form extends React.Component {
                 <p>Дата выполнения</p>
                 <input type='date' onChange={(event) => this.setState({dateCompleted: event.target.value})}
                        value={this.state.dateCompleted}></input>
-                <button onClick={this.props.addTask(this.state.todoItem)}><span>Добавить в список</span></button>
+                <button onClick={this.pushItem}><span>Добавить в список</span></button>
                 <button><span>Удалить задачу</span></button>
                 <button><span>Выполнена</span></button>
             </div>
